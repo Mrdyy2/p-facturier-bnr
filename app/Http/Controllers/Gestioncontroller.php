@@ -9,7 +9,7 @@ class Gestioncontroller extends Controller
     //
 
     public function app(){
-        return view("gestion_system.main");
+        return view("gestion_system.bilan_vente");
     }
 
     public function main(){

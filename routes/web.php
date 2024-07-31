@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ceci recence les routes propres au module de gestion du systeme
+
 Route::get('/index',[Gestioncontroller::class,'main']);
 
 Route::get('/Bventes',[Gestioncontroller::class,'app']);
