@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\firstcontroller;
+use App\Http\Controllers\Gestioncontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main',[firstcontroller::class,'main']);
+Route::get('/index',[Gestioncontroller::class,'main']);
 
-Route::get('/layout/app',[firstcontroller::class,'app']);
+Route::get('/Bventes',[Gestioncontroller::class,'app']);
 

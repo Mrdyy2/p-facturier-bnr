@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Admin Dashboard</title>
+    {{-- entrer le titre de la page de maniere dynamique --}}
+    <title>@yield('page_title') </title>
     <meta
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
@@ -75,14 +76,9 @@
         </div>
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
             <div class="sidebar-content">
-                <ul class="nav nav-secondary">
-                    <li class="nav-item">
-                        <a href="widgets.html">
-                            <i class="fas fa-desktop"></i>
-                            <p>Widgets</p>
-                        </a>
-                    </li>
-                </ul>
+
+                @yield('nav')
+                
             </div>
         </div>
     </div>

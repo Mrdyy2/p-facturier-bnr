@@ -1,4 +1,11 @@
-@extends('layout.app')
+@extends('gestion_system.main')
+
+{{-- ceci est parti re presentant les noms de pages qui seront variant en fonction du role --}}
+@section('page_title')
+    Dashboard - Bilan de Ventes
+@endsection
+
+{{-- ceci est la section representant le contenu de la page qui sera variant en fonction des roles --}}
 @section('content')
 <div class="container">
   <div class="page-inner">

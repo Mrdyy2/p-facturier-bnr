@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class firstcontroller extends Controller
+class Gestioncontroller extends Controller
 {
     //
 
     public function app(){
-        return view("layout.app");
+        return view("gestion_system.main");
     }
 
     public function main(){
-        return view("index");
+        return view("gestion_system.index");
     }
 
 
