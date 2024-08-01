@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-{{-- ceci est la liste representant les menus de la navbar qui seront variant en fonction du role --}}
+
 @section('nav')
 <ul class="nav nav-secondary">
   <li class="nav-item">
