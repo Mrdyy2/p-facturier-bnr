@@ -21,7 +21,7 @@
       <div class="col-md-4">
         <div class="card card-secondary">
           <div class="card-body skew-shadow">
-            <h1>3072</h1>
+            <h1>{{ $nbre_facture }}</h1>
             <h5 class="op-8">Total Factures</h5>
             <div class="pull-right">
               <h3 class="fw-bold op-8">88%</h3>

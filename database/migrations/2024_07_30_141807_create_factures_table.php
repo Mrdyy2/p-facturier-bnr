@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('factures', function (Blueprint $table) {
             $table->id('id_facture');
+            $table->string('numero_facture');
             $table->string('nom_client');
             $table->string('pnom_client');
             $table->integer('num_compte');

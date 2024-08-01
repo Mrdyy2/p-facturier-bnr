@@ -14,6 +14,7 @@ class Factures extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'numero_facture',
         'nom_client',
         'pnom_client',
         'num_compte',
