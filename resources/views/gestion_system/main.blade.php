@@ -24,12 +24,34 @@
       </a>
   </li>
 
-  <li class="nav-item">
-      <a href="{{ route('admin.users') }}">
-          <i class="fas fa-desktop"></i>
-          <p>Gestion Utilisateurs</p>
-      </a>
-  </li>
+
+  <li class="nav-item submenu">
+        <a data-bs-toggle="collapse" href="#submenu" class="" aria-expanded="true">
+        <i class="fas fa-bars"></i>
+        <p>Gestion Utilisateurs</p>
+        <span class="caret"></span>
+        </a>
+        <div class="collapse show" id="submenu" style="">
+        <ul class="nav nav-collapse">
+                <li>
+                <a href="{{ route('admin.users.caisse') }}">
+                    <span class="sub-item">Liste Caissieres</span>
+                </a>
+                </li>
+                <li>
+                <a href="{{ route('admin.users.magasin') }}">
+                    <span class="sub-item">Liste Magasiniers</span>
+                </a>
+                </li>
+                <li>
+                <a href="{{ route('admin.users') }}">
+                    <span class="sub-item">Ajouter Utilisateurs</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
 
   
 @endsection

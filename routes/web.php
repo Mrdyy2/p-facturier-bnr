@@ -25,9 +25,14 @@ Route::get('/', function () {
 Route::prefix('/admin')->group(function () {
     
     Route::get('/index',[Gestioncontroller::class,'main'])->name('admin.index');
-    Route::get('/Bventes',[Gestioncontroller::class,'app'])->name('admin.ventes');
+    Route::get('/Bventes',[Gestioncontroller::class,'ventesPages'])->name('admin.ventes');
     Route::get('/produits',[Gestioncontroller::class,'produit'])->name('admin.produits');
-    Route::get('/users',[Gestioncontroller::class,'app'])->name('admin.users');
+
+    Route::get('/users',[Gestioncontroller::class,'add_user_page'])->name('admin.users.main');
+    Route::post('/users/ajout',[Gestioncontroller::class,'add_user'])->name('admin.users');
+
+    Route::get('/users/caisse',[Gestioncontroller::class,'bilan_caissiere'])->name('admin.users.caisse');
+    Route::get('/users/magasin',[Gestioncontroller::class,'bilan_magasinier'])->name('admin.users.magasin');
 
 });
 
