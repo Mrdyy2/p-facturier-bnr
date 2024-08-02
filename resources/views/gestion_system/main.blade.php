@@ -4,23 +4,30 @@
 @section('nav')
 <ul class="nav nav-secondary">
   <li class="nav-item">
-      <a href="index">
+      <a href="{{ route('admin.index')}} ">
           <i class="fas fa-desktop"></i>
           <p>Accueil</p>
       </a>
   </li>
 
   <li class="nav-item">
-      <a href="Bventes">
+      <a href="{{ route('admin.ventes')}} ">
           <i class="fas fa-desktop"></i>
-          <p>Ajouter produit</p>
+          <p>Bilan ventes</p>
       </a>
   </li>
 
   <li class="nav-item">
-      <a href="produits">
+      <a href="{{ route('admin.produits') }}">
           <i class="fas fa-desktop"></i>
-          <p>liste de Produits</p>
+          <p>Bilan de Produits</p>
+      </a>
+  </li>
+
+  <li class="nav-item">
+      <a href="{{ route('admin.users') }}">
+          <i class="fas fa-desktop"></i>
+          <p>Gestion Utilisateurs</p>
       </a>
   </li>
 

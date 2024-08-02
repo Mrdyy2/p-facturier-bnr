@@ -22,9 +22,15 @@ Route::get('/', function () {
 
 // ceci ressence les routes propres au module de gestion du systeme
 
-Route::get('/index',[Gestioncontroller::class,'main']);
+Route::prefix('/admin')->group(function () {
+    
+    Route::get('/index',[Gestioncontroller::class,'main'])->name('admin.index');
+    Route::get('/Bventes',[Gestioncontroller::class,'app'])->name('admin.ventes');
+    Route::get('/produits',[Gestioncontroller::class,'produit'])->name('admin.produits');
+    Route::get('/users',[Gestioncontroller::class,'app'])->name('admin.users');
 
-Route::get('/Bventes',[Gestioncontroller::class,'app']);
+});
+
 
 
 
