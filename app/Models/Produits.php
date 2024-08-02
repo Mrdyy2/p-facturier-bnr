@@ -16,7 +16,8 @@ class Produits extends Model
     protected $fillable = [
         'product_name',
         'price',
-        'quantity',,
+        'quantiteStock',
+        'date_entre'
     ];
 
 }

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id('id_produit');
             $table->string('product_name');
             $table->string('price');
-            $table->string('quantity');
+            $table->string('quantiteStock');
+            $table->date('date_entre');
             $table->timestamps();
         });
     }

@@ -18,7 +18,8 @@ class Factures extends Model
         'pnom_client',
         'num_compte',
         'nom_compte',
-        'nom_bank'
+        'nom_bank',
+        'date_enregistment'
     ];
 
 }

@@ -17,6 +17,13 @@ class ProduitController extends Controller
         return view("gestion_produit.create_pro");
     }
 
+    public function createProStore(Request $request){
+
+        $data =$request;
+
+        return dd($data);
+    }
+
     public function listePro(){
         return view("gestion_produit.liste_pro");
     }

@@ -18,6 +18,11 @@ return new class extends Migration
             $table->integer('num_compte');
             $table->string('nom_compte');
             $table->string('nom_bank');
+            $table->string('date_enregistment');
+            $table->integer('total_factur');
+
+            
+
             $table->timestamps();
         });
     }

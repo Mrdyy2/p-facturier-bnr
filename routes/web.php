@@ -28,9 +28,11 @@ Route::get('/Bventes',[Gestioncontroller::class,'app']);
 
 // GESTION DE PROUIT: ROUTE
 
-Route::get('/new',[ProduitController::class,'new']);
+Route::get('/gestion_produit/new',[ProduitController::class,'new']);
 
 Route::get('/gestion_produit/create_pro',[ProduitController::class,'createPro']);
+Route::post('/gestion_produit/create_pro',[ProduitController::class,'createProStore'])->name('createProStore');
+
 
 Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro']);
 
