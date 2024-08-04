@@ -2,7 +2,7 @@
 
 {{-- ceci est parti re presentant les noms de pages qui seront variant en fonction du role --}}
 @section('page_title')
-    Dashboard - Bilan
+    Dashboard - Bilan des Ventes
 @endsection
 
 {{-- ceci est la section representant le contenu de la page qui sera variant en fonction des roles --}}
@@ -17,41 +17,67 @@
         <h6 class="op-7 mb-2">Admin Dashboard</h6>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card card-secondary">
-          <div class="card-body skew-shadow">
-            <h1>{{ $nbre_facture }}</h1>
-            <h5 class="op-8">Total Factures</h5>
-            <div class="pull-right">
-              <h3 class="fw-bold op-8">88%</h3>
+
+    <div class="row stats-vente-row">
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-info card-round">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-5">
+                <div class="icon-big text-center">
+                  <i class="fas fa-user-check"></i>
+                </div>
+              </div>
+              <div class="col-7 col-stats">
+                <div class="numbers">
+                  <p class="card-category">Subscribers</p>
+                  <h4 class="card-title">1303</h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-secondary bg-secondary-gradient">
-          <div class="card-body bubble-shadow">
-            <h1>188</h1>
-            <h5 class="op-8">Ventes Totales</h5>
-            <div class="pull-right">
-              <h3 class="fw-bold op-8">25%</h3>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-success card-round">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-5">
+                <div class="icon-big text-center">
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+              </div>
+              <div class="col-7 col-stats">
+                <div class="numbers">
+                  <p class="card-category">Ventes</p>
+                  <h4 class="card-title">$ 1,345</h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-secondary bg-secondary-gradient">
-          <div class="card-body curves-shadow">
-            <h1>12</h1>
-            <h5 class="op-8">Banque Favorite</h5>
-            <div class="pull-right">
-              <h3 class="fw-bold op-8">70%</h3>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-secondary card-round">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-5">
+                <div class="icon-big text-center">
+                  <i class="far fa-check-circle"></i>
+                </div>
+              </div>
+              <div class="col-7 col-stats">
+                <div class="numbers">
+                  <p class="card-category">Commandes</p>
+                  <h4 class="card-title">576</h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-8">
         <div class="card card-round">

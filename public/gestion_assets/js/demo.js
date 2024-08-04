@@ -189,11 +189,11 @@ Circles.create({
 	styleText:    true
 })
 
-//Notify
+//Notification
 $.notify({
 	icon: 'icon-bell',
-	title: 'Kaiadmin',
-	message: 'Premium Bootstrap 5 Admin Dashboard',
+	title: 'Facturier-BNR',
+	message: 'Bienvenu sur votre application de gestion de factures !',
 },{
 	type: 'secondary',
 	placement: {
