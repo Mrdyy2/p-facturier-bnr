@@ -452,8 +452,8 @@
     <script src="{{ asset('gestion_assets/js/core/popper.min.js') }} "></script>
     <script src="{{ asset('gestion_assets/js/core/bootstrap.min.js') }} "></script>
 
-    <!-- jQuery Scrollbar -->
-    {{-- <script src="{{ asset('gestion_assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }} "></script>
+      <!-- jQuery Scrollbar -->
+    <script src="{{ asset('gestion_assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }} "></script> 
 
     <!-- Chart JS -->
     <script src="{{ asset('gestion_assets/js/plugin/chart.js/chart.min.js') }} "></script>
@@ -475,7 +475,10 @@
     <script src="{{ asset('gestion_assets/js/plugin/jsvectormap/world.js') }} "></script>
 
     <!-- Sweet Alert -->
-    <script src="{{ asset('gestion_assets/js/plugin/sweetalert/sweetalert.min.js') }} "></script> --}}
+    <script src="{{ asset('gestion_assets/js/plugin/sweetalert/sweetalert.min.js') }} "></script> 
+    
+    <script src="{{ asset('gestion_assets/js/plugin\bootstrap-notify\bootstrap-notify.min.js') }} "></script> 
+    
 
     <!-- Kaiadmin JS -->
     <script src="{{ asset('gestion_assets/js/kaiadmin.min.js') }} "></script>

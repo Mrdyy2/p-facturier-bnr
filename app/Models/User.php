@@ -24,9 +24,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    protected $attributes = [
-        'password' => 'user',
-    ];
+    
     
 
     /**

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('subname');
             $table->string('idrole');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

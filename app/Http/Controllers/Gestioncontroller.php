@@ -52,7 +52,6 @@ class Gestioncontroller extends Controller
             'subname' => 'required',
             'role' => 'required',
             'email' => 'required|unique:users',
-            'password',
         ]);
         // Créez un nouvel utilisateur dans la base de données
         $user = new User();

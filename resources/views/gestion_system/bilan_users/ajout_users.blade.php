@@ -63,36 +63,26 @@
     
                     <div class="row">
                     
-                        <div class="col-md-6 col-lg-6">
+                        <div class="col-md-6 col-lg-10">
                             <div class="form-floating form-floating-custom mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="{{ old('title') }}">
-                                <label for="floatingInput">Email address</label>
+                              <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" >
+                              <label for="floatingInput">Email address</label>
                             </div>
                             
-    
-                            <div class="form-floating form-floating-custom mb-3">
-                                <input type="password" class="form-control" id="floatingInput" name="motDePass" placeholder="Motde_pass123">
-                                <label for="floatingInput">Mot de Passe</label>
-                              </div>
                         </div>
     
-                        <div class="col-md-6 col-lg-6">
+                        <div class="col-md-6 col-lg-10">
     
-                            <div class="form-group">
-                                <label for="defaultSelect">Role</label>
-                                <select class="form-select form-control" id="defaultSelect" name="role" placeholder="Motde_pass123">
-                                    <option value="1" >1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-    
-                            <div class="form-floating form-floating-custom mb-3">
-                                <input type="password" class="form-control" id="floatingInput" name="motDePass_ok" placeholder="Motde_pass123">
-                                <label for="floatingInput">Confirmer Mot de passe</label>
-                            </div>
+                          <div class="form-group">
+                            <label for="defaultSelect">Role</label>
+                            <select class="form-select form-control" id="defaultSelect" name="role" placeholder="Motde_pass123">
+                              <option value="1" >1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
                         </div>
                     </div>
                 </div>
