@@ -1,4 +1,4 @@
-@extends('gestion_system.main')
+@extends('gestion_produit.new')
 
 {{-- ceci est parti re presentant les noms de pages qui seront variant en fonction du role --}}
 @section('page_title')
@@ -21,32 +21,46 @@
               >
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
+                    <th>Non Du Produit</th>
+                    <th>Qantite en stock</th>
                     <th>Price</th>
-                    <th>Start date</th>
-                    <th></th>
+                    <th>Date D'entre</th>
+                    <th>Option</th>
 
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
+                    <th>Non Du Produit</th>
+                    <th>Qantite en stock</th>
                     <th>Price</th>
-                    <th>Start date</th>
-                    <th></th>
+                    <th>Date D'entre</th>
+                    <th>Option</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td> <button class="btn btn-danger">Cancel</button>
-                    </td>
-                  </tr>
+                  @foreach ($produits as $item)
+                      <tr>
+                        <td>{{$item->product_name}}</td>
+                        <td>{{$item->price}}</td>
+                        <td>{{$item->quantiteStock}}</td>
+                        <td>{{$item->date_entre}}</td>
+                        <td> 
+                          <form action="/gestion_produit/{{ $item->id }}" method="POST">
+                            @csrf
+                            <button class="btn btn-success">Update</button>  
+                          </form>
+                        </td>
+                        <td> 
+                          <form action="/gestion_produit/delete{{ $item->id }}" method="POST">
+                            @method('DELETE')                              
+                            @csrf
+                            <button class="btn btn-danger">Cancel</button>  
+                          </form>
+                        </td>
+                      </tr>
+                  @endforeach
+                 {{ $produits->links() }} 
                 </tbody>
               </table>
             </div>

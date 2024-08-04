@@ -30,19 +30,21 @@ Route::get('/Bventes',[Gestioncontroller::class,'app']);
 
 // GESTION DE PROUIT: ROUTE
 
-Route::get('/gestion_produit/new',[ProduitController::class,'new']);
+Route::get('/gestion_produit/new',[ProduitController::class,'new'])->name('new');
 
-Route::get('/gestion_produit/create_pro',[ProduitController::class,'createPro']);
+                 // creer un prouduit
+Route::get('/gestion_produit/create_pro',[ProduitController::class,'createPro'])->name('createPro');
 Route::post('/gestion_produit/create_pro',[ProduitController::class,'createProStore'])->name('createProStore');
 
+                // modifier un prouduit
+Route::post('/gestion_produit/{id_produit}',[ProduitController::class,'edit'])->name('edit');
+Route::put('/gestion_produit/{id_produit}',[ProduitController::class,'update']);
+Route::get('/gestion_produit/update_pro',[ProduitController::class,'updatePro'])->name('update');;
 
-Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro']);
+                // lister un prouduit
+Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro'])->name('listePro');
 
-
-
-
-
-
-
+                // supprimer un prouduit
+Route::delete('/gestion_produit/delete{id_produit}',[ProduitController::class,'delete'])->name('delete');
 
 // FIN DE GESTION DE PRODUIT

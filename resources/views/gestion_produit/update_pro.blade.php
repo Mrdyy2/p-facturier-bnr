@@ -15,9 +15,9 @@
             </div>
             <div class="card-body">
               <div class="row">
-                <form action="{{route('createProStore')}}" method="post">
+                <form action="/gestion_produit/{{$produits->id}}" method="post">
                   @csrf
-                  @method('post')
+                  @method('put')
                   <div class="col-md-6 col-lg-4">
                     <div class="form-group">
                       <label for="nomProduit">Nom Du Produit</label>
@@ -41,15 +41,18 @@
                       <input type="date" name="date" class="form-control" id="date"  >
                     </div>                   
                   </div>
-                  <div class="card-action">
-                    <button class="btn btn-success">Submit</button>
-                    
-                    
-                  </div> 
+                  
+                  <form action="/gestion_produit/liste_pro" method="POST">
+                    @csrf
+                    <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                  </form> 
                 </form>
               </div>
             </div>
             
           </div>
-      </div>             
+      </div>
+
+            
+              
  @endsection
