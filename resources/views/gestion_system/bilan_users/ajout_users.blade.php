@@ -45,9 +45,17 @@
                             <input type="text" class="form-control" id="floatingInput" name="name" placeholder="amdy">
                             <label for="floatingInput">Nom</label>
                         </div>
-    
+
+                        @if ($errors ->any())
+                          <div class="alert-danger" style="text-decoration-color: red">
+                            @foreach ($errors->all() as $error)
+                              <p style="color: red">{{$error}}</p>
+                            @endforeach
+                          </div>
+                        @endif
+
                         <div class="form-floating form-floating-custom mb-3">
-                            <input type="email" class="form-control" id="floatingInput" name="subname" placeholder="rayan">
+                            <input type="text" class="form-control" id="floatingInput" name="subname" placeholder="rayan">
                             <label for="floatingInput">Prenom</label>
                         </div>
                         
@@ -57,13 +65,13 @@
                     
                         <div class="col-md-6 col-lg-6">
                             <div class="form-floating form-floating-custom mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="mail" placeholder="name@example.com">
+                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" value="{{ old('title') }}">
                                 <label for="floatingInput">Email address</label>
                             </div>
                             
     
                             <div class="form-floating form-floating-custom mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="motDePass" placeholder="Motde_pass123">
+                                <input type="password" class="form-control" id="floatingInput" name="motDePass" placeholder="Motde_pass123">
                                 <label for="floatingInput">Mot de Passe</label>
                               </div>
                         </div>
@@ -82,14 +90,14 @@
                             </div>
     
                             <div class="form-floating form-floating-custom mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="motDePass_ok" placeholder="Motde_pass123">
+                                <input type="password" class="form-control" id="floatingInput" name="motDePass_ok" placeholder="Motde_pass123">
                                 <label for="floatingInput">Confirmer Mot de passe</label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-action">
-                  <button class="btn btn-success" type="submit">Submit</button>
+                  <button class="btn btn-success" id="displayNotif" type="submit">Submit</button>
                   <button class="btn btn-danger" type="reset">Cancel</button>
                 </div>
               </div>
@@ -99,6 +107,14 @@
 
       </div>
     </div>
+</div>
+
+<div data-notify="container"  class="col-10 col-xs-11 col-sm-4 alert alert-danger" role="alert" data-notify-position="top-right" style="display: inline-block; margin: 0px auto; padding-left: 65px; position: fixed; transition: 0.5s ease-in-out; z-index: 1031; top: 20px; right: 20px;">
+  <button type="button" aria-hidden="true" class="close" data-notify="dismiss" style="position: absolute; right: 10px; top: 5px; z-index: 1033;"> x </button>
+  <span data-notify="icon" class="fa fa-bell"></span> 
+  <span data-notify="title">Ajout reussi</span> 
+  <span data-notify="message">utilisateur ajoute avec success</span>
+  <a href="index.html" target="_blank" data-notify="url" style="background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&quot;); height: 100%; left: 0px; position: absolute; top: 0px; width: 100%; z-index: 1032;"></a>
 </div>
 
 @endsection

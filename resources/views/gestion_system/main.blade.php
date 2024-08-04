@@ -44,7 +44,7 @@
                 </a>
                 </li>
                 <li>
-                <a href="{{ route('admin.users') }}">
+                <a href="{{ route('admin.users.main') }}">
                     <span class="sub-item">Ajouter Utilisateurs</span>
                 </a>
                 </li>

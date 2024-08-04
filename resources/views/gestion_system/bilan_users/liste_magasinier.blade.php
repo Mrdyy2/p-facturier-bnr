@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 tableau_magasin">
                 <div class="card" style="width: 90%">
                   <div class="card-header">
                     <div class="card-title">Magasiniers enregistres</div>

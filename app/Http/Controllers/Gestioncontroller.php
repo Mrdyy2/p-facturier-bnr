@@ -43,9 +43,17 @@ class Gestioncontroller extends Controller
     public function add_user(Request $request){
         $name = $request->input('name');
         $subname = $request->input('subname');
-        $email = $request->input('mail');
+        $email = $request->input('email');
         $role = $request->input('role');
         
+        // @dd($request);
+        $request->validate([
+            'name' => 'required',
+            'subname' => 'required',
+            'role' => 'required',
+            'email' => 'required|unique:users',
+            'password',
+        ]);
         // Créez un nouvel utilisateur dans la base de données
         $user = new User();
         $user->name = $name;
