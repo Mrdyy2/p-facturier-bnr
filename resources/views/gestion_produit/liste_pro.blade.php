@@ -57,10 +57,12 @@
                             @csrf
                             <button class="btn btn-danger">Cancel</button>  
                           </form>
-                        </td>
+                         </td>
                       </tr>
                   @endforeach
-                 {{ $produits->links() }} 
+                  <div class="pagination justify-content-center">
+                    {{ $produits->links('pagination::bootstrap-4') }}
+                  </div>
                 </tbody>
               </table>
             </div>

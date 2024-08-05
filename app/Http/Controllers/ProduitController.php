@@ -36,7 +36,7 @@ class ProduitController extends Controller
     public function listePro(){
 
         $produits= Produits::all();   
-        $produits = Produits::paginate(4); // 15 éléments par page
+        $produits = Produits::paginate(10); // 15 éléments par page
 
 
         return view("gestion_produit.liste_pro", ['produits'=> $produits]);
