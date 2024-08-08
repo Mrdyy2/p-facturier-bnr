@@ -88,38 +88,6 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8">
-        <div class="card card-round">
-          <div class="card-header">
-            <div class="card-head-row">
-              <div class="card-title">Statistiques d'utilisateurs</div>
-              <div class="card-tools">
-                <a
-                  href="#"
-                  class="btn btn-label-success btn-round btn-sm me-2"
-                >
-                  <span class="btn-label">
-                    <i class="fa fa-pencil"></i>
-                  </span>
-                  Exporter
-                </a>
-                <a href="#" class="btn btn-label-info btn-round btn-sm">
-                  <span class="btn-label">
-                    <i class="fa fa-print"></i>
-                  </span>
-                  Imprimer
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="chart-container" style="min-height: 375px">
-              <canvas id="statisticsChart"></canvas>
-            </div>
-            <div id="myChartLegend"></div>
-          </div>
-        </div>
-      </div>
       <div class="col-md-4">
         <div class="card card-primary card-round">
           <div class="card-header">
@@ -161,6 +129,9 @@
             </div>
           </div>
         </div>
+      </div>
+      
+      <div class="col-md-4">
         <div class="card card-round">
           <div class="card-body pb-0">
             <div class="h1 fw-bold float-end text-primary">+5%</div>
@@ -169,6 +140,41 @@
             <div class="pull-in sparkline-fix">
               <div id="lineChart"></div>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card card-round">
+          <div class="card-header">
+            <div class="card-head-row">
+              <div class="card-title">Statistiques d'utilisateurs</div>
+              <div class="card-tools">
+                <a
+                  href="#"
+                  class="btn btn-label-success btn-round btn-sm me-2"
+                >
+                  <span class="btn-label">
+                    <i class="fa fa-pencil"></i>
+                  </span>
+                  Exporter
+                </a>
+                <a href="#" class="btn btn-label-info btn-round btn-sm">
+                  <span class="btn-label">
+                    <i class="fa fa-print"></i>
+                  </span>
+                  Imprimer
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-container" style="min-height: 375px">
+              <canvas id="statisticsChart"></canvas>
+            </div>
+            <div id="myChartLegend"></div>
           </div>
         </div>
       </div>
