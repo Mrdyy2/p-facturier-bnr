@@ -29,14 +29,14 @@ class ProduitController extends Controller
             'date_entre'=> request('date'),
         ]);
 
-        return view("gestion_produit.create_pro");
+        return redirect()->route('listePro')->with('success','le produit a ete enregistre');
 
     }
 
     public function listePro(){
 
         $produits= Produits::all();   
-        $produits = Produits::paginate(10); // 15 éléments par page
+        $produits = Produits::paginate(7); // 15 éléments par page
 
 
         return view("gestion_produit.liste_pro", ['produits'=> $produits]);
@@ -84,6 +84,22 @@ class ProduitController extends Controller
 
         
     }
+
+    public function search(Request $request)
+{
+    $data = $request->input('search');
+
+    // Utilisation de la méthode where() avec une chaîne interpolée pour la recherche
+    $produit = Produits::where('product_name', 'like', '%' . $data . '%')->get();
+
+    // Vérification si des résultats ont été trouvés
+    if ($produit->isEmpty()) {
+        // Aucun résultat trouvé, vous pouvez afficher un message à l'utilisateur
+        return view('gestion_produit.search_pro')->with('message', 'Aucun produit trouvé.');
+    } else {
+        return view('gestion_produit.search_pro')->with('produit', $produit);
+    }
+}
 
 
 }

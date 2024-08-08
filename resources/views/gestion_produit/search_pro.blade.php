@@ -41,7 +41,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  @foreach ($produits as $item)
+                  @foreach ($produit as $item)
                       <tr>
                         <td>{{$item->product_name}}</td>
                         <td>{{$item->price}}</td>
@@ -63,7 +63,6 @@
                       </tr>
                   @endforeach
                   <div class="pagination justify-content-center">
-                    {{ $produits->links('pagination::bootstrap-4') }}
                   </div>
                 </tbody>
               </table>

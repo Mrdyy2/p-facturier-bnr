@@ -46,6 +46,8 @@ Route::get('/gestion_produit/new',[ProduitController::class,'new'])->name('new')
                  // creer un prouduit
 Route::get('/gestion_produit/create_pro',[ProduitController::class,'createPro'])->name('createPro');
 Route::post('/gestion_produit/create_pro',[ProduitController::class,'createProStore'])->name('createProStore');
+Route::get('/gestion_produit/search_pro',[ProduitController::class,'search'])->name('search');
+
 
                 // modifier un prouduit
 Route::post('/gestion_produit/{id_produit}',[ProduitController::class,'edit'])->name('edit');
