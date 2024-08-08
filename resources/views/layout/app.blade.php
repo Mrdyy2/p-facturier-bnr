@@ -121,16 +121,16 @@
                 class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
               >
                 <div class="input-group">
+                  <form action="{{route('search') }}" class="d-flex ">
+
+                  <input type="text" name="search" placeholder="Search ..." class="form-control" />
+
                   <div class="input-group-prepend">
                     <button type="submit" class="btn btn-search pe-1">
                       <i class="fa fa-search search-icon"></i>
                     </button>
                   </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control"
-                  />
+                </form>
                 </div>
               </nav>
 
