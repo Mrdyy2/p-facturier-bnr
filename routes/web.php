@@ -36,7 +36,7 @@ Route::prefix('/admin')->group(function () {
 
 });
 
-
+ 
 
 
 // GESTION DE PROUIT: ROUTE

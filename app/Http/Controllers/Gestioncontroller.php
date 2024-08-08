@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,6 +11,7 @@ use App\Models\Factures;
 class Gestioncontroller extends Controller
 {
 
+    // protected $user_role;
     //fonction pour l'ouverture de la page principale
     public function main(){
         return view("gestion_system.index");
@@ -31,13 +33,24 @@ class Gestioncontroller extends Controller
     }
 
     //ouverture de la page sur les utilisateurs magasinier
-    public function bilan_magasinier(){
-        return view("gestion_system.bilan_users.liste_magasinier");
+    public function bilan_magasinier(){ $i =1 ; //num dans le tableau
+        //recuperation des users dont l'id est 3= role caissiere
+        $magasiniers = DB::table('users')
+                        ->join('roles','users.idrole', '=','roles.idrole')
+                        ->where('roles.role_name','=','magasinier')
+                        ->get();
+        return view("gestion_system.bilan_users.liste_magasinier",["magasiniers"=> $magasiniers,"i"=> $i]);
     }
 
     //ouverture de la page sur les utilisateurs caissieres
     public function bilan_caissiere(){
-        return view("gestion_system.bilan_users.liste_caissieres");
+        $i =1 ; //num dans le tableau
+        //recuperation des users dont l'id est 3= role caissiere
+        $caissieres = DB::table('users')
+                        ->join('roles','users.idrole', '=','roles.idrole')
+                        ->where('roles.role_name','=','caissiere')
+                        ->get();
+        return view("gestion_system.bilan_users.liste_caissieres",["caissieres"=> $caissieres,"i"=> $i]);
     }
 //ajout d'utilisateurs
     public function add_user(Request $request){
@@ -66,7 +79,8 @@ class Gestioncontroller extends Controller
     }
 
     public function add_user_page(){
-        return view("gestion_system.bilan_users.ajout_users");
+        $roles = DB::table('roles')->get();
+        return view("gestion_system.bilan_users.ajout_users", ['roles' => $roles]);
     }
 
 

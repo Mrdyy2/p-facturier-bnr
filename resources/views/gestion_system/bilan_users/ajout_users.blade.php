@@ -76,11 +76,11 @@
                           <div class="form-group">
                             <label for="defaultSelect">Role</label>
                             <select class="form-select form-control" id="defaultSelect" name="role" placeholder="Motde_pass123">
-                              <option value="1" >1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
+                              @foreach ($roles as $role)
+                              
+                                <option value="{{$role->idrole}}" >{{$role->role_name }}</option>
+
+                              @endforeach
                             </select>
                           </div>
                         </div>

@@ -29,17 +29,22 @@
                           <th scope="col">Nom</th>
                           <th scope="col">Prenom</th>
                           <th scope="col">Email</th>
-                          <th scope="col">Nom utilisateur</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td>@mdo</td>
-                        </tr>
+                         
+                        @foreach ($caissieres as $caissiere)
+
+                          <tr>
+                            <td>{{ $i }}</td>
+                            <td>{{ $caissiere->name }}</td>
+                            <td>{{ $caissiere->subname }}</td>
+                            <td>{{ $caissiere->email }}</td>
+                          </tr>
+                          <span style="display: none">{{$i++}}</span>  
+                          
+                        @endforeach
+                        
                       </tbody>
                     </table>
                   </div>
