@@ -63,7 +63,7 @@ Route::put('/gestion_produit/{id_produit}',[ProduitController::class,'update']);
 Route::get('/gestion_produit/update_pro',[ProduitController::class,'updatePro'])->name('update');;
 
                 // lister un prouduit
-Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro'])->name('listePro');
+Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro'])->name('listePro')->middleware('checkRole:magazinier,admin');;
 
                 // supprimer un prouduit
 Route::delete('/gestion_produit/delete{id_produit}',[ProduitController::class,'delete'])->name('delete');
@@ -90,15 +90,15 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 // Routes pour les rôles
 Route::get('admin/dashboard', function() {
     return view('gestion_system.bilan_produit');
-})->name('admin.ventes')->middleware('auth');
+})->name('admin.ventes')->middleware('checkRole:admin');
 
 Route::get('caissier/dashboard', function() {
     return view('admin.ventes');
-})->name('')->middleware('auth');
+})->name('')->middleware('checkRole:caissier,admin');
 
 Route::get('magasinier/dashboard', function() {
-    return view('bilan_produit.blade.php');
-})->name('')->middleware('auth');
+    return view('gestion_produit.new');
+})->name('magazinier.dashboard')->middleware('checkRole:magazinier,admin');
 
 // Route home
 Route::get('/', function () {

@@ -41,7 +41,7 @@ class LoginController extends Controller
                 case 'caissier':
                     return redirect()->route('user.dashboard');
                 case 'magazinier':
-                    return redirect()->route('user.dashboard');
+                    return redirect()->route('magazinier.dashboard');
                 // Ajoutez d'autres rôles si nécessaire
                 // default:
                 //     return redirect()->route('home');
