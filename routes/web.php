@@ -4,6 +4,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Gestioncontroller;
 use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Facade;
+use App\Http\Controllers\Auth\RegisterController;
+
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +31,8 @@ Route::get('/', function () {
 // ceci ressence les routes propres au module de gestion du systeme
 
 Route::prefix('/admin')->group(function () {
-    
-    Route::get('/index',[Gestioncontroller::class,'main'])->name('admin.index');
+
+    Route::get('/index',[Gestioncontroller::class,'main'])->name('admin.index')->middleware('auth');
     Route::get('/Bventes',[Gestioncontroller::class,'ventesPages'])->name('admin.ventes');
     Route::get('/produits',[Gestioncontroller::class,'produit'])->name('admin.produits');
 
@@ -34,7 +42,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/users/caisse',[Gestioncontroller::class,'bilan_caissiere'])->name('admin.users.caisse');
     Route::get('/users/magasin',[Gestioncontroller::class,'bilan_magasinier'])->name('admin.users.magasin');
 
-});
+})->middleware('auth');
 
  
 
@@ -55,9 +63,44 @@ Route::put('/gestion_produit/{id_produit}',[ProduitController::class,'update']);
 Route::get('/gestion_produit/update_pro',[ProduitController::class,'updatePro'])->name('update');;
 
                 // lister un prouduit
-Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro'])->name('listePro');
+Route::get('/gestion_produit/liste_pro',[ProduitController::class,'listePro'])->name('listePro')->middleware('checkRole:magazinier,admin');;
 
                 // supprimer un prouduit
 Route::delete('/gestion_produit/delete{id_produit}',[ProduitController::class,'delete'])->name('delete');
 
 // FIN DE GESTION DE PRODUIT
+Auth::routes();
+
+// Route pour afficher le formulaire d'inscription (GET)
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])
+    ->name('register');
+
+// Route pour traiter le formulaire d'inscription (POST)
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+
+Route::post('login', [LoginController::class, 'login']);
+
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+// Routes pour les rôles
+Route::get('admin/dashboard', function() {
+    return view('gestion_system.bilan_produit');
+})->name('admin.ventes')->middleware('checkRole:admin');
+
+Route::get('caissier/dashboard', function() {
+    return view('admin.ventes');
+})->name('')->middleware('checkRole:caissier,admin');
+
+Route::get('magasinier/dashboard', function() {
+    return view('gestion_produit.new');
+})->name('magazinier.dashboard')->middleware('checkRole:magazinier,admin');
+
+// Route home
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
